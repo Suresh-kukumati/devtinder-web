@@ -1,7 +1,7 @@
 function App() {
   return (
     <>
-      <div className="navbar bg-base-100 shadow-sm">
+      <div className="navbar bg-base-200 shadow-sm">
         <div className="flex-1">
           <a className="btn btn-ghost text-xl">👩‍💻DevTinder</a>
         </div>
@@ -39,7 +39,7 @@ function App() {
           </div>
         </div>
       </div>
-      <h1 class="text-3xl font-bold underline">Hello world!</h1>
+      <h1 className="text-3xl font-bold underline">Hello world!</h1>
       <button className="btn">Default</button>
     </>
   );
