@@ -13,3 +13,6 @@
 - Create Footer
 
 - Create a login page
+- Install axios
+- CORS - install cors in backend => add middleware to with configration: oregin, credential: true
+- Whenever you're making API call so pass => {withCredentials: true}
