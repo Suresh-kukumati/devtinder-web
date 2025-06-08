@@ -16,3 +16,14 @@
 - Install axios
 - CORS - install cors in backend => add middleware to with configration: oregin, credential: true
 - Whenever you're making API call so pass => {withCredentials: true}
+
+- Install react-redux + @reduxjs/toolkit - https://redux-toolkit.js.org/tutorials/quick-start
+- ConfigureStore => Provider => createSlice => add reducr to store
+- Add redux devtools in chrome
+- Login and see if your data is coming properly in the store
+- Navbar should update as soon as user logs in
+- Refactor our code to add constant file + create a components folder
+
+- You should not be access other page without login
+- If token is not present, redirect to user login page
+- logout features
