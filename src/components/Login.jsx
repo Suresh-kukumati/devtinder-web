@@ -9,6 +9,7 @@ const Login = () => {
 
   const [emailId, setEmailId] = useState("pratibha@gmail.com");
   const [password, setPassword] = useState("Pratibha@123");
+  const [error, setError] = useState("");
 
   const dispatch = useDispatch();
 
@@ -25,11 +26,18 @@ const Login = () => {
           password: password,
         }),
       });
+
+      if (!res.ok) {
+        const errorData = await res.json();
+        throw new Error(errorData.error || "Failed to login");
+      }
+
       const data = await res.json();
       dispatch(addUser(data.data));
-      navigate("/");
+      return navigate("/");
     } catch (err) {
-      console.log(err);
+      // console.log(err.message, "My error");
+      setError(err.message);
     }
   };
   return (
@@ -57,6 +65,7 @@ const Login = () => {
               placeholder="Type here"
             />
           </fieldset>
+          <p className="text-red-500">{error}</p>
           <div className="card-actions justify-center">
             <button className="btn btn-primary" onClick={handleSubmitFunction}>
               Submit

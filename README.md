@@ -26,4 +26,38 @@
 
 - You should not be access other page without login
 - If token is not present, redirect to user login page
-- logout features
+- logout features //still pending
+- Get the feed and add the feed in the store
+- build the user card in the feed
+- Edit profile features
+
+- Show Toast Message on save of profile
+- New page - See all my connections
+- New page - See all my connection requests
+- Feture - Accept/Reject connection request
+
+- Send/Ignore user card from the feed
+- Sign up new user
+- E2E testing
+
+Body NavBar Route=/ => Feed Route=/login => Login Route=/connetions => Connections Router=/profile => Profile
+
+## Deploment
+
+- Signup on AWS
+- Launch instance
+- chmod 400 <secret>.pem
+- ssh -i "devTinder-secret.pem" ubuntu@ec2-16-16-26-75.eu-north-1.compute.amazonaws.com
+- install NVM - curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+- nvm install 22.14.0
+- Git clone
+- Frontend
+  - npm install -> dependencies install
+  - npm run build
+  - sudo apt update
+  - sudo apt install nginx
+  - sudo systemctl start nginx
+  - sudo systemctl enable nginx
+  - Copy code from dist(build files) to /var/www/html/
+  - sudo scp -r dist/\* /var/www/html/
+  - Enable port :80 of your instance
