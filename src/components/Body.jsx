@@ -23,7 +23,8 @@ const Body = () => {
       });
 
       if (!fetchData.ok) {
-        throw new Error(`HTTP error! status: ${fetchData.status}`);
+        const errors = await fetchData.json();
+        throw new Error(errors.message || "Something went wrong");
       }
 
       const data = await fetchData.json();
@@ -32,7 +33,7 @@ const Body = () => {
       if (err.message.includes(401)) {
         return navigate("/login");
       }
-      console.error(err);
+      console.error(err.message);
     }
   };
 
